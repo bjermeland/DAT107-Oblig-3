@@ -270,8 +270,10 @@ public class Grensesnitt {
 			int input = Integer.parseInt(getInput());
 			List<Ansatt> ansatte = ansattDAO.listAnsatte();
 			Avdeling avdNy = avdelingDAO.finnAvdelingMedId(input);
+			
 			for (Ansatt an : ansatte) {
 				if(avdNy.getId() == an.getAvdeling().getId()) { 
+					
 					int sjef_id = avdNy.getSjef().getId();
 					if(an.getId() == sjef_id) {
 						System.out.println("\nSJEF | " + an);
